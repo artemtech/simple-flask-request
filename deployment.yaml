@@ -17,7 +17,8 @@ spec:
       containers:
       - name: app
         env:
-          LIST_URLS: https://ipinfo.io,https://dummyjson.com/todos,https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8,https://joaosilgo.github.io/dummy_db/posts.json
+        - name: LIST_URLS
+          value: https://ipinfo.io,https://dummyjson.com/todos,https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8,https://joaosilgo.github.io/dummy_db/posts.json
         image: artemtech/simple-flask-request
         ports:
         - containerPort: 8990
