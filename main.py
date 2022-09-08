@@ -11,8 +11,9 @@ list_urls = os.environ['LIST_URLS'].split(',')
 
 @app.route('/test-hit', methods=['GET'])
 def testIndex():
-  response = requests.get(random.choice(list_urls))  
-  return "Got it", 200
+  current_url = random.choice(list_urls)
+  response = requests.get(current_url)  
+  return f"{current_url}", 200
 
 if __name__ == '__main__':
   logging.basicConfig(level=logging.INFO)
