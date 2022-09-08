@@ -1,0 +1,4 @@
+Dockerfile
+.dockerignore
+deployment.yaml
+README.md

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-flask-test
+  labels:
+    app: flask-test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-test
+  template:
+    metadata:
+      labels:
+        app: flask-test
+    spec:
+      containers:
+      - name: app
+        env:
+          LIST_URLS: https://ipinfo.io,https://dummyjson.com/todos,https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8,https://joaosilgo.github.io/dummy_db/posts.json
+        image: artemtech/simple-flask-request
+        ports:
+        - containerPort: 8990
