@@ -13,7 +13,7 @@ list_urls = os.environ['LIST_URLS'].split(',')
 def testIndex():
   current_url = random.choice(list_urls)
   response = requests.get(current_url)  
-  return f"{current_url}", 200
+  return f"{current_url}\n", 200
 
 if __name__ == '__main__':
   logging.basicConfig(level=logging.INFO)
