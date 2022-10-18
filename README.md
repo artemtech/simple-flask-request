@@ -8,5 +8,5 @@ kubectl apply -f deployment.yaml
 kubectl expose deployment simple-flask-test --type NodePort
 
 # test hit
-curl http://ip_host:nodeport/test-hit
+curl http://ip_host:nodeport/subdir/test-hit
 ```
