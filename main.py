@@ -9,7 +9,7 @@ app.secret_key = 'alsjfoiewcjrowieorxewroewrekfje'
 
 list_urls = os.environ['LIST_URLS'].split(',')
 
-@app.route('/test-hit', methods=['GET'])
+@app.route('/subdir/test-hit', methods=['GET'])
 def testIndex():
   current_url = random.choice(list_urls)
   response = requests.get(current_url)  
